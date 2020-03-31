@@ -1,6 +1,9 @@
 @Library('github.com/releaseworks/jenkinslib') _
 
 pipeline {
+    environment {
+        AWS_DEFAULT_REGION = 'us-east-2'
+    }
     agent { docker { image 'maven:latest' } }
     stages {
         stage('build') {
