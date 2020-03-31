@@ -22,4 +22,4 @@ server:
       buffered: false
       suffix:
       file-date-format:
-  port: 8081
+  port: 8080
