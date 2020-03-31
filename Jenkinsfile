@@ -18,6 +18,7 @@ pipeline {
                         def app = docker.build("mtgbutler-api")
                         app.push('latest');
                     }
+                }
                 sh 'aws ecs update-service --cluster mtgbutler-production --service api --force-new-deployment'
             }
         }
