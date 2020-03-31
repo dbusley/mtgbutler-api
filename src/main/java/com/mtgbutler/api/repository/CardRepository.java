@@ -13,7 +13,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.Optional;
 
-@PreAuthorize("isAuthenticated()")
 public interface CardRepository
     extends PagingAndSortingRepository<Card, Long>,
         QuerydslPredicateExecutor<Card>,
