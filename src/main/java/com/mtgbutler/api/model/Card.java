@@ -21,6 +21,11 @@ public class Card {
 
   private String colors;
 
+  private Rarity rarity;
+
+  @Column(length = 2048)
+  private String oracleText;
+
   @Transient private BigDecimal latestPrice;
 
   @OneToMany(cascade = CascadeType.ALL)
