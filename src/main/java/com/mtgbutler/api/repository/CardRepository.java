@@ -4,6 +4,7 @@ import com.mtgbutler.api.model.Card;
 import com.mtgbutler.api.model.QCard;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.dsl.StringExpression;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.querydsl.binding.QuerydslBindings;
@@ -40,6 +41,9 @@ public interface CardRepository
   @Override
   @RestResource(exported = false)
   void deleteAll();
+
+  @Query(value="SELECT * FROM card ORDER BY RAND() LIMIT 1", nativeQuery = true)
+  Card random();
 
   @Override
   default void customize(QuerydslBindings bindings, QCard root) {
